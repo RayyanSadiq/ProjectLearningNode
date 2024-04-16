@@ -7,13 +7,13 @@ Welcome to the Learning Node repository! This project serves as a dedicated spac
 ## Key Learnings
 Here's what I've covered so far in my Node.js journey:
 
-### 1. Node Module System
+### Node Module System
 - Understanding the Node.js module system.
 - Learning how to create and require modules in Node.js.
 - How Node works?
 - Module Wrapper Function
 
-### 2. Built-in Node Modules
+### Built-in Node Modules
 - Exploring key built-in Node.js modules such as:
   - HTTP module: for learning the basics of creating HTTP servers and clients.
   - OS module: for interacting with operating system-related information.
@@ -21,7 +21,7 @@ Here's what I've covered so far in my Node.js journey:
   - Path Module: for interacting with paths.
   - Events Module: for learning about the EventEmitter class and how to recive and emit events
 
-### 3. npm (Node Package Manager)
+### NPM (Node Package Manager)
 - Gaining proficiency in npm, the Node Package Manager.
 - Learning about the package.json file and its significance.
 - Mastering the process of:
@@ -32,4 +32,13 @@ Here's what I've covered so far in my Node.js journey:
   - Updating and Semantic Versioning
   - local and global packages
   - Publishing my own packages to the npm registry.
-
+    
+### Express.JS
+  - RESTful Services
+  - Building Web Servers
+  - Nodemon
+  - Enviormental Variables
+  - Route Parameters
+  - Handling HTTP Requests
+  - CRUD
+  - User Input validation
