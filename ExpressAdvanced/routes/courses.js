@@ -1,10 +1,5 @@
-const Joi = require('joi')
-const express = require('express');
-const app = express();
-
-app.use(express.json())
-
-// Ctrl + c to restart terminal
+const express = require('express')
+const router= express.Router()
 
 const courses = [
     { id: 1, name:'mosh'},
@@ -12,21 +7,17 @@ const courses = [
     { id: 3, name:'amigos'}
 ]
 
-app.get("/", (request, response) => {
-    response.send('Hello World');
-});
-
-app.get("/api/courses", (request, response) => {
+router.get("/", (request, response) => {
     response.send(courses);
 });
 
-app.get("/api/courses/:id", (request, response) => {
+router.get("/:id", (request, response) => {
     const course = courses.find(course => course.id === parseInt(request.params.id));
     if(!course) {return response.status(404).send('The course with the given ID was not found')}
     response.send(course);
 });
 
-app.post('/api/courses', (request, response) => {
+router.post('/', (request, response) => {
 
     const schema = Joi.object({
         name: Joi
@@ -54,7 +45,7 @@ app.post('/api/courses', (request, response) => {
     
 })
 
-app.put("/api/courses/:id", (request, response) => {
+router.put("/:id", (request, response) => {
     const course = courses.find(course => course.id === parseInt(request.params.id));
     if(!course) { return response.status(404).send('The course with the given ID was not found')}
 
@@ -76,7 +67,7 @@ app.put("/api/courses/:id", (request, response) => {
 
 })  
 
-app.delete("/api/courses/:id", (request, response) => {
+router.delete("/:id", (request, response) => {
     const course = courses.find(course => course.id === parseInt(request.params.id));
     if(!course) {return response.status(404).send('The course with the given ID was not found')}
 
@@ -85,7 +76,4 @@ app.delete("/api/courses/:id", (request, response) => {
     response.send(course)
 })
 
-const port = process.env.PORT || 3000;
-app.listen(port, () => {
-    console.log(`listening on port ${port}`)
-})
+module.exports = router;
